@@ -97,7 +97,7 @@ f:SetScript("OnEnter", function()
   end
   
   GameTooltip:AddLine("|cfff58cbaBubbles (|cffffffff" .. b .. "|cfff58cba)")
-  GameTooltip:AddLine("|cffaaaaaaMaximum amount of rested bubbles is 30. To fully rest with one tent takes 12 minutes.", 0, 0, 0, true)
+  GameTooltip:AddLine("|cffaaaaaaMaximum amount of rested bubbles is 30. To fully rest with one tent takes around 13 minutes. Multiple tents can stack and speed up resting.", 0, 0, 0, true)
   GameTooltip:AddLine(" ")
   GameTooltip:AddDoubleLine("|cffffffffRested", "|cffaaaaaa" .. r .. " XP")
   if r + x > m then
