@@ -1,0 +1,6 @@
+## Interface: 11200
+## Title: |cfff58cbaBubbles
+## Author: Computer Equipment Group
+## Notes: Displays available rested XP bubbles
+## Version: 0.1
+Bubbles.lua
