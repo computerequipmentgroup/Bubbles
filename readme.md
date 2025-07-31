@@ -1,3 +1,3 @@
-## Bubbles 0.1
+![alt text](ui.png "bubbles ui")
 
-Easily access informatin about your rested status and how many bubbles are left in order to be fully rested.
+Addon that displays available rested XP bubbles and how many tents are actively providing.

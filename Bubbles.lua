@@ -1,4 +1,3 @@
--- ty to https://forum.turtle-wow.org/viewtopic.php?p=65081#p65081
 local x, m, r, b 
 local f = CreateFrame("Button", "Bubbles", UIParent)
 
@@ -39,8 +38,8 @@ f:SetScript("OnUpdate", function()
 
     local totalXP = UnitXPMax("player")
     local rate = (gained / totalXP) * 100
-    local tents = math.floor(rate / (0.15 * threshold))
-    DEFAULT_CHAT_FRAME:AddMessage(rate .. " " .. tents .. " " .. gained .. " " .. totalXP)
+    -- ty to https://github.com/Pizzahawaiii/PizzaWorldBuffs/blob/dbfef375451131c62d26db4c15cee5bae5b41133/src/tents.lua#L69
+    tents = math.floor(rate / (0.13 * threshold))
 
     if tents ~= lastTents then
       this = f
@@ -61,6 +60,7 @@ f:SetScript("OnEvent", function()
   if -1 == (r or -1) then
     b = 0
   else
+    -- ty to https://forum.turtle-wow.org/viewtopic.php?p=65081#p65081
     b = math.floor(20 * r / m + 0.5)
   end
 
