@@ -1,5 +1,6 @@
 ![alt text](ui.png "bubbles ui")
 
+## Bubbles
 Addon that displays available rested XP bubbles and how many tents are actively providing.
 
 ```
