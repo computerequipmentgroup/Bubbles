@@ -24,7 +24,7 @@ local tents = 0
 f:SetScript("OnUpdate", function()
   local now = GetTime()
   local delta = now - lastUpdate
-  local threshold = 3.0
+  local threshold = 1
 
   lastUpdate = now
   elapsed = elapsed + delta
