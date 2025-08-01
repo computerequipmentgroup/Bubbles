@@ -21,6 +21,9 @@ local lastTents = 0
 local elapsed = 0
 local tents = 0
 
+local remaining = 0
+local time = nil
+
 f:SetScript("OnUpdate", function()
   local now = GetTime()
   local delta = now - lastUpdate
@@ -32,14 +35,26 @@ f:SetScript("OnUpdate", function()
   if elapsed >= threshold then
     elapsed = 0
 
-    local currentXP = GetXPExhaustion() or 0
-    local gained = currentXP - lastXP
-    lastXP = currentXP
+    r = GetXPExhaustion() or 0
+    local gained = r - lastXP
+    lastXP = r
 
-    local totalXP = UnitXPMax("player")
-    local rate = (gained / totalXP) * 100
+    m = UnitXPMax("player")
+    local rate = (gained / m) * 100
     -- ty to https://github.com/Pizzahawaiii/PizzaWorldBuffs/blob/dbfef375451131c62d26db4c15cee5bae5b41133/src/tents.lua#L69
     tents = math.floor(rate / (0.13 * threshold))
+
+    local p = 0.13 * math.max(tents, 1) / threshold
+    remaining = (1 - r / (m * 1.5)) * (100 / p)
+
+    local mins = math.floor(math.floor(remaining) / 60)
+    local secs = math.floor(remaining) - (mins * 60)
+    
+    if secs < 10 then
+      time = mins .. ":0" .. secs
+    else
+      time = mins .. ":" .. secs
+    end
 
     if tents ~= lastTents then
       this = f
@@ -70,7 +85,7 @@ f:SetScript("OnEvent", function()
   else 
     text = "|cfff58cba" .. b .. "|cffffffff Bubbles"
   end
-
+  
   f.text:SetText(text)
   f:SetWidth(f.text:GetStringWidth() + 10)
 end)
@@ -105,7 +120,10 @@ f:SetScript("OnEnter", function()
   end
   GameTooltip:AddDoubleLine("|cffffffffStill", "|cffaaaaaa" .. m - x .. " XP")
   GameTooltip:AddDoubleLine("|cffffffffPercent", "|cffaaaaaa" .. math.floor(x / m * 100) .. "%")
-  if isRestingFr then
+  
+  GameTooltip:AddDoubleLine("|cffffffffTime to full rest", "|cfff58cba" .. time)
+
+  if tents > 0 then
     GameTooltip:AddDoubleLine("|cffffffffStatus", "|cffaaaaaaGaining from " .. f.tents .. " tent(s)")
   end
 
