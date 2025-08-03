@@ -2,5 +2,5 @@
 ## Title: |cfff58cbaBubbles
 ## Author: Computer Equipment Group
 ## Notes: Displays available rested XP bubbles
-## Version: 1.0
+## Version: 1.1
 Bubbles.lua
