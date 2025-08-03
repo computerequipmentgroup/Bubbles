@@ -3,12 +3,12 @@ local f = CreateFrame("Button", "Bubbles", UIParent)
 
 f:ClearAllPoints()
 f:SetWidth(100)
-f:SetHeight(30)
+f:SetHeight(25)
 f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 f:SetFrameStrata("HIGH")
 
 f.text = f:CreateFontString("Status", "LOW", "GameFontNormal")
-f.text:SetFont(STANDARD_TEXT_FONT, 12, "OUTLINE")
+f.text:SetFont("Fonts\\ARIALN.TTF", 13, "OUTLINE")
 f.text:ClearAllPoints()
 f.text:SetAllPoints(f)
 f.text:SetPoint("LEFT", 0, 0)
@@ -102,8 +102,11 @@ f:SetScript("OnMouseUp", function()
 end)
 
 f:SetScript("OnEnter", function()
-  GameTooltip:SetOwner(this, "ANCHOR_RIGHT")
-  GameTooltip_SetDefaultAnchor(GameTooltip, this)
+  GameTooltip:SetOwner(f, "ANCHOR_NONE")
+  GameTooltip:ClearAllPoints()
+
+  GameTooltip:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, (CONTAINER_OFFSET_Y or 0) + 13)
+  GameTooltip:SetClampedToScreen(true)
 
   if -1 == (r or -1) then
     b = 0
