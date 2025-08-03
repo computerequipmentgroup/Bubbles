@@ -134,4 +134,4 @@ f:SetScript("OnLeave", function()
   GameTooltip:Hide()
 end)
 
-DEFAULT_CHAT_FRAME:AddMessage("|cfff58cbaBubbles |cffffffff1.0 loaded")
+DEFAULT_CHAT_FRAME:AddMessage("|cfff58cbaBubbles |cffffffff1.1 loaded")
