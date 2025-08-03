@@ -121,10 +121,10 @@ f:SetScript("OnEnter", function()
   GameTooltip:AddDoubleLine("|cffffffffStill", "|cffaaaaaa" .. m - x .. " XP")
   GameTooltip:AddDoubleLine("|cffffffffPercent", "|cffaaaaaa" .. math.floor(x / m * 100) .. "%")
   
-  GameTooltip:AddDoubleLine("|cffffffffTime to full rest", "|cfff58cba" .. time)
+  GameTooltip:AddDoubleLine("|cffffffffTime to full rest", "|cfff58cba" .. time .. " |cffaaaaaamin")
 
   if tents > 0 then
-    GameTooltip:AddDoubleLine("|cffffffffStatus", "|cffaaaaaaGaining from " .. f.tents .. " tent(s)")
+    GameTooltip:AddDoubleLine("|cffffffffStatus", "|cffaaaaaaGaining from " .. tents .. " tent(s)")
   end
 
   GameTooltip:Show()
