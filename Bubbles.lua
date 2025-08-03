@@ -3,7 +3,7 @@ local f = CreateFrame("Button", "Bubbles", UIParent)
 
 f:ClearAllPoints()
 f:SetWidth(100)
-f:SetHeight(50)
+f:SetHeight(30)
 f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 f:SetFrameStrata("HIGH")
 
