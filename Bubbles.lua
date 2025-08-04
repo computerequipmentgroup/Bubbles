@@ -81,7 +81,7 @@ f:SetScript("OnEvent", function()
 
   local text
   if tents > 0 and tents < 10 then
-    text = "|cfff58cba" .. b .. "|cffffffff Bubbles |cfff58cba• " .. tents
+    text = "|cfff58cba" .. b .. "|cffffffff Bubbles / |cfff58cba" .. tents
   else 
     text = "|cfff58cba" .. b .. "|cffffffff Bubbles"
   end
