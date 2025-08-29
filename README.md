@@ -1,5 +1,3 @@
-![alt text](ui.png "bubbles ui")
-
 ## Bubbles
 Addon that displays available rested XP bubbles, how many tents are actively providing them and the remaining time until 150% rested XP.
 
@@ -11,3 +9,5 @@ Percent             XP in percent of current level
 Time to full rest   Remaining time until 150% rested XP
 Status              Additional tent(s) count
 ```
+
+![alt text](ui.png "bubbles ui")
