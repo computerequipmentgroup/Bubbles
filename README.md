@@ -1,7 +1,7 @@
 ## Bubbles
-Addon that displays available rested XP bubbles, how many tents are actively providing them and the remaining time until 150% rested XP.
+Addon that displays available rested XP bubbles, how many tents are actively providing them and the remaining time until 150% rested XP. Type `/bubbles` or `/b` to list all available commands.
 
-```
+```           
 Rested              Total rested XP
 Rested+             Rested XP from next level
 Still               XP needed to level up
