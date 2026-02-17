@@ -137,4 +137,21 @@ f:SetScript("OnLeave", function()
   GameTooltip:Hide()
 end)
 
+SLASH_BUBBLES1 = "/bubbles"
+SLASH_BUBBLES2 = "/b"
+
+SlashCmdList["BUBBLES"] = function(msg)
+  msg = string.lower(msg or "")
+
+  if msg == "reset" then
+    f:ClearAllPoints()
+    f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+    f:SetUserPlaced(false)
+    DEFAULT_CHAT_FRAME:AddMessage("|cfff58cbaBubbles|cffffffff frame reset to center.")
+  else
+    DEFAULT_CHAT_FRAME:AddMessage("|cfff58cbaBubbles commands:")
+    DEFAULT_CHAT_FRAME:AddMessage("|cffffffff/b reset - Reset frame to center")
+  end
+end
+
 DEFAULT_CHAT_FRAME:AddMessage("|cfff58cbaBubbles |cffffffff1.1 loaded")
